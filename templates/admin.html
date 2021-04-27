@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <style>
+        p{
+            margin: 0;
+        }
+        body{
+            font-family: "montserrat";
+        }
+        header{
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .big_container{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand{
+            font-size: 35px;
+            font-weight: 800;
+            color: black;
+            text-decoration: none;
+        }
+        .bold{
+            font-weight: 600;
+        }
+        .container_card{
+            display: flex;
+            width: 95%;
+            height: 25px;
+            margin: auto;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid rgb(197, 197, 197);
+            padding: 20px 15px;
+            -webkit-box-shadow: 3px 4px 8px -3px rgba(0,0,0,0.67); 
+            box-shadow: 3px 4px 8px -3px rgba(0,0,0,0.67);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="big_container">
+            <a href="/" class="brand">ABCD</a>
+            <p>Powered by <span class="bold">Vincent & Fabian</span></p>
+        </div>
+    </header>
+    <div class="container">
+        {% for value in text %}
+            <div class="container_card">
+                <p>{{value[0]}}</p>
+                <p>{{value[2]}}</p>
+                <a href="/articles/admin/delete/{{value[0]}}">delete this article</a>
+                <a href="/articles/admin/{{value[2]}}">go to this article page</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

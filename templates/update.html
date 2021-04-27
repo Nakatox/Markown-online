@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        p{
+            margin: 0;
+        }
+        body{
+            font-family: "montserrat";
+        }
+        header{
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .big_container{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand{
+            font-size: 35px;
+            font-weight: 800;
+            color: black;
+            text-decoration: none;
+        }
+        .bold{
+            font-weight: 600;
+        }
+        .board{
+            width: 100%;
+            min-height: 70vh;
+            margin: auto;
+            background-color: black;
+            color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .board > div{
+            width: 98%;
+            margin: auto;
+            min-height: 70vh;
+        }
+        form{
+            min-height: 70vh;
+        }
+        .update{
+            width: 100%;
+            border: none;
+            background: black;
+            color: white;
+            min-height: 70vh;
+            resize: none;
+        }
+        .update_button{
+            background-color: rgb(96, 96, 219);
+            width: 150px;
+            height: 30px;
+            border-radius: 6px;
+            border: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="big_container">
+            <a href="/" class="brand">ABCD</a>
+            <p>Powered by <span class="bold">Vincent & Fabian</span></p>
+        </div>
+    </header>
+    <div class="board">
+        <div>
+            <form action="/articles/admin/update/{{text[0]}}" method="POST">
+                <textarea type="text" name="content" class="update">{{content}}</textarea>
+                <input class="update_button" type="submit" value="update">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
